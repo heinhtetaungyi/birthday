@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myat Su Wai - Birthday</title>
+  <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content{
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px;
+  background: #E30B5C;
+  color: #fff;
+  border-radius: 6px;
+  z-index: 9;
+  width: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+.button:hover{
+  background: rgba(0,0,0, 0.5);
+}
+
+  </style>
+</head>
+<body>
+  
+  <div class="video-container">
+    
+    <img src="https://i.pinimg.com/736x/2a/f8/41/2af8416d0e17e22671176577ca30f387.jpg" alt="Birthday Image"/>
+    
+        <video id="video-background">
+            <source src="https://v1.pinimg.com/videos/mc/720p/61/ff/c0/61ffc0f13b9b7506bb2f0512f4de48d6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="content">
+          <div class="button">🎁</div>
+        </div>
+        
+        
+    </div>
+
+  <script>
+  
+  const array = ["မွေးနေ့မှာ ပျော်ရွင်ပါစေ 🩵", "ကျန်းမာပျော်ရွှင်ပါစေ🩵", "စိတ်၏ချမ်းသာ ကိုယ်၏ကျန်းမာခြင်းနှင့်ပြည့်စုံပါစေ", "ကောင်းကျိုးလိုရာဆန္ဒများအားလုံး ပြည့်ဝပါစေ","စု ဖြစ်ချင်ရေ ဆန္ဒတိအားလုံး အမြန်ဆုံး ဖြစ်မြောက်ပါစီ"];
+    var video = document.getElementById('video-background');
+    var playButton = document.querySelector('img');
+    var playButton2 = document.querySelector('.button');
+    
+    video.play();
+    playButton.addEventListener('click', function() {
+        video.style.display = "block";
+        video.play();
+    });
+    playButton2.addEventListener('click', function() {
+        video.style.display = "block";
+        video.play();
+    });
+    video.addEventListener('ended', function() {
+        let randomItem = array[Math.floor(Math.random() * array.length)];
+        alert(randomItem);
+    });
+</script>
+
+</body>
+</html>
